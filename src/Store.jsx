@@ -1,4 +1,5 @@
 import { createStore } from "redux"
+import { composeWithDevTools } from '@redux-devtools/extension';
 //Step 1: Create Reducer
 //Reducer: pure function that takes the previous state and an action, and returns the next state
 const ADD_TASK = 'task/add'
@@ -34,7 +35,7 @@ const taskReducer = (state = initialState, action) => {
 //Initial State
 //Step 2: Create Store
 //Store: object that holds the application state
-export const store = createStore(taskReducer);
+export const store = createStore(taskReducer, composeWithDevTools());
 console.log('Initial State: ', store.getState());
 
 
